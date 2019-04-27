@@ -12,6 +12,8 @@
   window.addEventListener('load', async () => {
     await getBooks(res => {
       console.log(res)
+
+      askjdakjbdkjbaskjds
     })
   })
 </script>
