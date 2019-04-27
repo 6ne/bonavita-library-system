@@ -1,0 +1,32 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-head.navbar {
+  transition: .2s background-color;
+}
+
+.user-menu {
+  padding: 0 20px !important;
+}
+
+.fab {
+  background-color: #209cee;
+  border-radius: 50%;
+  bottom: 20px;
+  cursor: pointer;
+  opacity: 0;
+  padding: 15px;
+  position: fixed;
+  right: 20px;
+  transition: .2s background-color, .2s opacity;
+  z-index: 1;
+}
+
+.fab:hover {
+  background-color: #3273dc;
+}
+
+.hero-footer {
+  padding: 10px;
+}
