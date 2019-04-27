@@ -47,7 +47,7 @@ class AuthController extends Controller
       }
 
       $user->save();
-      return redirect()->back()->withSuccess(['Register Success']);
+      return redirect()->back()->withSuccess('Register Success');
     }
 
     return redirect()->back()->withErrors($validator);
