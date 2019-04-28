@@ -30,3 +30,33 @@ html {
 .hero-footer {
   padding: 10px;
 }
+
+.column {
+  align-self: center;
+}
+
+.buttons {
+  justify-content: center;
+}
+
+.req-btn {
+  display: inline-flex !important;
+  width: 70% !important;
+}
+
+.anc-div {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.search-bar {
+  position: fixed;
+  width: 82%;
+  z-index: 29;
+  left: 9%;
+  margin-top: 2%;
+}
+
+.first-anc {
+  margin-top: 10% !important;
+}
