@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Books')
 
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/book-page.css') }}">
+@endsection
+
 @section('content')
 <main class="container has-text-centered">
   <div class="field">
@@ -16,49 +20,50 @@
 
 @section('script')
 <script type="text/javascript">
-  window.addEventListener('load', () => {
-    req.get('/api/books').then(res => {
-      console.log(store.get('books_on_held'))
-      $('main.container').innerHTML += `
-        <div class="tile is-ancestor anc-div first-anc">
-        <div class="tile is-parent box">
-        <div class="tile is-child">
-        <div class="title is-5">Title</div>
-        </div>
-        <div class="tile is-child">
-        <div class="title is-5">Author</div>
-        </div>
-        <div class="tile is-child">
-        <div class="title is-5">Stock</div>
-        </div>
-        <div class="tile is-child">
-        <div class="title is-5"></div>
-        </div>
-        </div>
-        </div
-        `
-      res.forEach(child => {
+  window.addEventListener('load', async () => {
+    let books = null
+    await getBooks(res => {
+      books = res
+    })
 
-        console.log(child)
-        $('main.container').innerHTML += `
-        <div class="tile is-ancestor anc-div">
-        <div class="tile is-parent box">
-        <div class="tile is-child">
-        <div class="subtitle">${child.title}</div>
-        </div>
-        <div class="tile is-child">
-        <div class="subtitle">${child.author}</div>
-        </div>
-        <div class="tile is-child">
-        <div class="subtitle">${child.stock}</div>
-        </div>
-        <div class="tile is-child">
-        <span class="button is-success is-fullwidth req-btn" disabled="${store.get('books_on_held') == 2 ? true : false }">Request</span>
-        </div>
-        </div>
-        </div>
-        `
-      })
+    $('main.container').innerHTML += `
+      <div class="tile is-ancestor anc-div first-anc">
+      <div class="tile is-parent box">
+      <div class="tile is-child">
+      <div class="title is-5">Title</div>
+      </div>
+      <div class="tile is-child">
+      <div class="title is-5">Author</div>
+      </div>
+      <div class="tile is-child">
+      <div class="title is-5">Stock</div>
+      </div>
+      <div class="tile is-child">
+      <div class="title is-5"></div>
+      </div>
+      </div>
+      </div
+      `
+
+    books.forEach(book => {
+      $('main.container').innerHTML += `
+      <div class="tile is-ancestor anc-div">
+      <div class="tile is-parent box">
+      <div class="tile is-child">
+      <div class="subtitle">${book.title}</div>
+      </div>
+      <div class="tile is-child">
+      <div class="subtitle">${book.author}</div>
+      </div>
+      <div class="tile is-child">
+      <div class="subtitle">${book.stock}</div>
+      </div>
+      <div class="tile is-child">
+      <span class="button is-success is-fullwidth req-btn" ${store.get('books_on_held') == 2 ? 'disabled=true' : '' }>Request</span>
+      </div>
+      </div>
+      </div>
+      `
     })
   })
 </script>
