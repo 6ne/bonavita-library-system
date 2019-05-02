@@ -36,3 +36,19 @@
   word-wrap: anywhere;
   align-self: center;
 }
+
+.tile.is-parent {
+  padding: .5rem;
+  background-color: transparent;
+  margin: 5px 0;
+}
+
+.book-list:hover {
+  box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+  transition: .5s;
+  transform: scale(1.01);
+}
+
+.heading-book-list {
+  background-color: rgba(10, 10, 10, 0.025) !important;
+}
