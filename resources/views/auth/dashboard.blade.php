@@ -76,5 +76,10 @@
     store.set('is_admin', "{{Session::get('user')->is_admin}}")
     store.set('books_on_held', "{{Session::get('user')->books_on_held}}")
   @endif
+
+  if(store.get('name') === 'Admin'){
+    console.log(store.get('name'))
+    
+  }
 </script>
 @endsection

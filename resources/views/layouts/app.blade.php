@@ -24,7 +24,7 @@
     <header class="hero-head navbar is-fixed-top is-transparent">
       <div class="navbar-brand">
         <a class="navbar-item" href="{{ url('/') }}">
-          <img src="{{ asset('bulma-logo.png') }}">
+          <img class="lib-logo" src="{{ asset('library-logo.png') }}">
         </a>
         <div class="navbar-burger burger">
           <span></span>
@@ -74,17 +74,11 @@
         @endif
         <div class="navbar-end">
           @if (Auth::guest())
-            <a class="navbar-item" href="{{ url('/login') }}">
-              <span class="icon">
-                <i class="fa fa-sign-in-alt"></i>
-              </span>
-              <span>Login</span>
+            <a class="navbar-item nav-item-button" href="{{ url('/login') }}">
+              <span class="button is-link is-outlined is-rounded nav-button">Login</span>
             </a>
-            <a class="navbar-item" href="{{ url('/register') }}">
-              <span class="icon">
-                <i class="fa fa-user-plus"></i>
-              </span>
-              <span>Register</span>
+            <a class="navbar-item nav-item-button" href="{{ url('/register') }}">
+              <span class="button is-primary is-rounded nav-button">Register</span>
             </a>
           @else
             <a class="navbar-item">
@@ -129,7 +123,7 @@
       @yield('content')
     </content>
 
-    <footer class="hero-footer has-text-centered is-size-5">
+    <footer class="hero-footer has-text-centered is-size-6">
       Bonavita Library System &copy; 2019
     </footer>
   </main>

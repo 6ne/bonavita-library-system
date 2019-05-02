@@ -18,7 +18,7 @@
 
 .search-bar {
   position: fixed;
-  width: 82%;
+  width: 82.1%;
   z-index: 29;
   left: 9%;
   margin-top: 2%;
@@ -26,4 +26,8 @@
 
 .first-anc {
   margin-top: 10% !important;
+}
+
+.hero-body {
+  align-items: normal;
 }

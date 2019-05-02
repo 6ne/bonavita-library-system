@@ -30,3 +30,17 @@ html {
 .hero-footer {
   padding: 10px;
 }
+
+/*app-navbar*/
+.lib-logo {
+  margin: .25rem;
+  max-height: 2.25rem !important;
+}
+
+.nav-button {
+  width: 6.5em;
+}
+
+.nav-item-button {
+  padding: .35rem;
+}
