@@ -17,15 +17,11 @@
 }
 
 .search-bar {
-  position: fixed;
-  width: 82.1%;
-  z-index: 29;
-  left: 9%;
   margin-top: 2%;
 }
 
 .first-anc {
-  margin-top: 10% !important;
+  margin-top: 2.5% !important;
 }
 
 .hero-body {
@@ -45,7 +41,7 @@
 
 .book-list:hover {
   box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
-  transition: .5s;
+  transition: .25s;
   transform: scale(1.01);
 }
 
