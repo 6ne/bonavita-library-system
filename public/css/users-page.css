@@ -1,0 +1,51 @@
+.user-card {
+    margin: 10px !important;
+}
+
+.user-card {
+    background-color: white;
+}
+
+.detail-button {
+    margin-top: 2rem;
+}
+
+.column.left-side-card {
+    background-color: gold;
+    align-self: center;
+}
+
+.columns {
+    margin-top: 0 !important;
+}
+
+.tag {
+    font-size: 12pt;
+    font-weight: bold;
+    border-radius: 50% !important;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 12pt;
+    margin: 5px;
+}
+
+.box {
+    padding: .75rem;
+}
+
+.major {
+    font-weight: bold;
+    font-size: 42pt;
+}
+
+.class {
+    font-weight: bold;
+    font-size: 14pt;
+    margin-top: 2.25rem;
+}
+
+/*.column {
+    padding: .5rem !important;
+}*/
