@@ -28,7 +28,7 @@
 
     $('main.container').innerHTML += `
       <div class="tile is-ancestor anc-div first-anc">
-      <div class="tile is-parent box">
+      <div class="tile is-parent message">
       <div class="tile is-child">
       <div class="title is-5">Title</div>
       </div>
@@ -42,13 +42,13 @@
       <div class="title is-5"></div>
       </div>
       </div>
-      </div
+      </div>
       `
 
     books.forEach(book => {
       $('main.container').innerHTML += `
       <div class="tile is-ancestor anc-div">
-      <div class="tile is-parent box">
+      <div class="tile is-parent message">
       <div class="tile is-child">
       <div class="subtitle">${book.title}</div>
       </div>

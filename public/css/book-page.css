@@ -31,3 +31,8 @@
 .hero-body {
   align-items: normal;
 }
+
+.tile.is-child {
+  word-wrap: anywhere;
+  align-self: center;
+}

@@ -1,0 +1,40 @@
+.first-anc {
+  margin: -.75rem 0 !important;
+}
+
+.is-active.deadline-active {
+  border-bottom: solid #ff3860 3px !important;
+  color: #ff3860 !important;
+}
+
+.deadline {
+    border-bottom-color: #ff3860 !important;
+    color: #ff3860 !important;
+}
+
+.tile.is-child {
+  word-wrap: anywhere;
+  align-self: center;
+}
+
+.tile.is-parent.message {
+    /*border-bottom: solid 1px;*/
+    background-color: transparent;
+    border-radius: 0;
+    margin-top: 12px;
+}
+
+.heading-list {
+    border-bottom: solid 1.5px !important;
+}
+
+.book-borrower-list:hover {
+    background-color: white !important;
+    box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+    border-left: solid 4px #ff3860;
+    transform: translate(-4px, 0);
+}
+
+.button.is-warning.is-rounded {
+    margin-bottom: 10px;
+}
