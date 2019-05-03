@@ -9,7 +9,7 @@ class UserController extends Controller
 {
   public function index ()
   {
-    return response()->json(User::all());
+    return response()->json(User::whereIs_admin(0)->get());
   }
 
   public function show ($id)
