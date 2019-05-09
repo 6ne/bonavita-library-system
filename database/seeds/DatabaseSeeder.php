@@ -55,6 +55,22 @@ class DatabaseSeeder extends Seeder
           'grade' => 11,
           'class' => 1
         ],
+        [
+          'name' => 'Contoh',
+          'nis' => 'contoh',
+          'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
+          'major' => 'AP',
+          'grade' => 10,
+          'class' => 3
+        ],
+        [
+          'name' => 'Example',
+          'nis' => 'example',
+          'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
+          'major' => 'AK',
+          'grade' => 12,
+          'class' => 1
+        ],
       ]);
 
       DB::table('books')->insert([
@@ -78,6 +94,81 @@ class DatabaseSeeder extends Seeder
           'author' => 'D',
           'stock' => 10
         ],
+      ]);
+
+      DB::table('notifications')->insert([
+        [
+          'book_id' => 1,
+          'from' => 4,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'approved',
+          'reason' => 'No reason'
+        ],
+        [
+          'book_id' => 2,
+          'from' => 4,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'approved',
+          'reason' => 'No reason'
+        ],
+        [
+          'book_id' => 3,
+          'from' => 5,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'rejected',
+          'reason' => 'No reason'
+        ],
+        [
+          'book_id' => 4,
+          'from' => 5,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'rejected',
+          'reason' => 'No reason'
+        ],
+        [
+          'book_id' => 2,
+          'from' => 5,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'rejected',
+          'reason' => 'No reason'
+        ],
+        [
+          'book_id' => 1,
+          'from' => 5,
+          'to' => 0,
+          'is_new' => 0,
+          'status' => 'approved',
+          'reason' => 'No reason'
+        ]
+      ]);
+
+      DB::table('transactions')->insert([
+        [
+          'user_id' => 4,
+          'book_id' => 1,
+          'is_active' => 1,
+          'borrowed_at' => '2019-05-09 23:44:42',
+          'lend_by' => 'Admin1'
+        ],
+        [
+          'user_id' => 4,
+          'book_id' => 2,
+          'is_active' => 1,
+          'borrowed_at' => '2019-05-09 23:44:42',
+          'lend_by' => 'Admin1'
+        ],
+        [
+          'user_id' => 5,
+          'book_id' => 1,
+          'is_active' => 1,
+          'borrowed_at' => '2019-05-09 23:44:42',
+          'lend_by' => 'Admin1'
+        ]
       ]);
     }
 }

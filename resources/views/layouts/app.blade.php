@@ -128,9 +128,9 @@
     </footer>
   </main>
 
-  <script async type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
-  <script async type="text/javascript" src="{{ asset('js/req.js') }}"></script>
-  <script async type="text/javascript" src="{{ asset('js/helper.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/req.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/helper.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
   @yield('script')
 </body>
