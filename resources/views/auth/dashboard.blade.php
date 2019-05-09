@@ -37,7 +37,7 @@
   <div class="tile is-ancestor anc-div first-anc heading-list">
     <div class="tile is-parent message">
       <div class="tile is-child">
-        <div class="title is-6">Username</div>
+        <div class="title is-6">NIS</div>
       </div>
       <div class="tile is-child">
         <div class="title is-6">Title</div>
@@ -104,7 +104,7 @@
   }
   store.set('real_id', "{{Session::get('user')->id}}")
   store.set('name', "{{Session::get('user')->name}}")
-  store.set('username', "{{Session::get('user')->username}}")
+  store.set('nis', "{{Session::get('user')->nis}}")
   store.set('major', "{{Session::get('user')->major}}")
   store.set('grade', "{{Session::get('user')->grade}}")
   store.set('class', "{{Session::get('user')->class}}")

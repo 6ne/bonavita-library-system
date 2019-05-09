@@ -30,7 +30,7 @@
       <div class="class">${(child.grade) == 0 || child.class == 0 ? '<div class="column"></div>' : `${child.grade}-${child.class}`}</div>
       </div>
       <div class="column">
-      <div>${child.username}</div>
+      <div>${child.nis}</div>
       <div class="name">${child.name}</div>
       <div>Books: <span class="tag" id="onheld-${child.id}">${child.books_on_held}</span></div>
       <div class="detail-button button is-primary is-fullwidth is-rounded">

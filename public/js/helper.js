@@ -151,3 +151,33 @@ const createTransaction = async (data, callback=null) => {
     }
   })
 }
+
+const getTransactions = async callback => {
+  await req.get('/api/transactions').then(res => {
+    callback(res)
+  })
+}
+
+const getTransaction = async (id, callback) => {
+  await req.get(`/api/transactions/${id}`).then(res => {
+    callback(res)
+  })
+}
+
+const getDeadlineTransactions = async callback => {
+  await req.get('/api/transactions/deadline').then (res => {
+    callback(res)
+  })
+}
+
+const getTodayTransactions = async callback => {
+  await req.get('/api/transactions/today').then(res => {
+    callback(res)
+  })
+}
+
+const getTransactionsByUser = async (id, callback) => {
+  await req.get(`/api/transactions/user/${id}`).then(res => {
+    callback(res)
+  })
+}

@@ -20,6 +20,14 @@ Route::group(['prefix' => '/api'], function () {
   Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'admin'], function () {
       Route::get('/users', 'UserController@index');
+
+      Route::group(['prefix' => 'transactions'], function () {
+        Route::get('/', 'TransactionController@index');
+        Route::get('/{id}', 'TransactionController@show');
+        Route::get('/user/{id}', 'TransactionController@getUser');
+        Route::get('/deadline', 'TransactionController@getDeadline');
+        Route::get('/today', 'TransactionController@getToday');
+      });
     });
 
     Route::group(['prefix' => 'notifications'], function () {

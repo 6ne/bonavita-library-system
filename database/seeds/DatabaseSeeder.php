@@ -17,21 +17,21 @@ class DatabaseSeeder extends Seeder
       DB::table('users')->insert([
         [
           'name' => 'Admin1',
-          'username' => 'admin1',
+          'nis' => 'admin1',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'Admin',
           'is_admin' => true
         ],
         [
           'name' => 'Admin2',
-          'username' => 'admin2',
+          'nis' => 'admin2',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'Admin',
           'is_admin' => true
         ],
         [
           'name' => 'Guru',
-          'username' => 'guru',
+          'nis' => 'guru',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'Teacher',
           'is_admin' => false
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
       DB::table('users')->insert([
         [
           'name' => 'Clavin June',
-          'username' => '2001539682',
+          'nis' => '2001539682',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'TKJ',
           'grade' => 12,
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         ],
         [
           'name' => 'Jessica Tania',
-          'username' => '2191651035',
+          'nis' => '2191651035',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'MM',
           'grade' => 11,

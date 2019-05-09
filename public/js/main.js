@@ -102,7 +102,7 @@ const renderNotifications = (res, mode) => {
           message = `You have been rejected to borrow [${book}] book by ${from}. ${item.reason}`
         }
         else {
-          message = `You have rejected ${from} to borrow [${book}] book.
+          message = `The Admin has rejected ${from} to borrow [${book}] book.
           <div>Reason: ${item.reason}</div>
           <div>Rejected at ${dateFormat(item.updated_at, 'ddd, D MMM YYYY HH:mm:ss')}</div>`
         }
@@ -112,7 +112,7 @@ const renderNotifications = (res, mode) => {
         if ( item.to != 0 ) {
           message = `You have been approved to borrow [${book}] book by ${from}. Don't forget to pick your book at the library`
         } else {
-          message = `You have approved ${from} to borrow a book titled [${book}].
+          message = `The Admin has approved ${from} to borrow a book titled [${book}].
           <div>Reason: ${item.reason}</div>
           <div>Approved at ${dateFormat(item.updated_at, 'ddd, D MMM YYYY HH:mm:ss')}</div>`
         }

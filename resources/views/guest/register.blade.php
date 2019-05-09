@@ -29,7 +29,7 @@
           <div class="column input-column">
             <div class="field">
               <p class="control has-icons-left">
-                <input name="username" id="nis" class="input" type="text" placeholder="Student's Number" autofocus>
+                <input name="nis" id="nis" class="input" type="text" placeholder="Student's Number" autofocus>
                 <span class="icon is-small is-left">
                   <i class="fa fa-address-card"></i>
                 </span>

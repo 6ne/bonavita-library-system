@@ -12,32 +12,43 @@ class AuthController extends Controller
   public function login (Request $request)
   {
     $validator = Validator::make($request->all(), [
-      'username' => 'required',
+      'nis' => 'required',
       'password' => 'required'
     ]);
 
     if (!$validator->fails()) {
-      if (Auth::attempt($request->only(['username', 'password']))) {
+      if (Auth::attempt($request->only(['nis', 'password']))) {
         return redirect('/')->withUser(Auth::user());
       } 
     }
 
-    return redirect()->back()->withErrors(['Wrong username/password']);
+    return redirect()->back()->withErrors(['Wrong nis/password']);
   }
 
   public function register (Request $request)
   {
     $validator = Validator::make($request->all(), [
       'name' => 'required',
-      'username' => 'required|unique:users',
-      'password' => 'required|confirmed',
-      'major' => 'required',
+      'nis' => 'required|unique:users',
+      'password' => 'required|confirmed'
     ]);
+
+    if ($request->major === "null") {
+      return redirect()->back()->withErrors("The major field is required");
+    }
+
+    if ($request->grade === "null") {
+      return redirect()->back()->withErrors("The grade field is required");
+    }
+
+    if ($request->class === "null") {
+      return redirect()->back()->withErrors("The class field is required");
+    }
 
     if (!$validator->fails()) {
       $user = new User;
       $user->name = $request->name;
-      $user->username = $request->username;
+      $user->nis = $request->nis;
       $user->password = bcrypt($request->password);
       $user->major = $request->major;
 

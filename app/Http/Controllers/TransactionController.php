@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
+  public function index ()
+  {
+    return response()->json(Transaction::all());
+  }
+
+  public function show ($id)
+  {
+    $id = intval($id);
+    $transaction = Transaction::find($id);
+    return response()->json($transaction);
+  }
+
   public function store (Request $request)
   {
     $transaction = new Transaction;
@@ -20,5 +32,25 @@ class TransactionController extends Controller
     }
     
     return response()->json([]);
+  }
+
+  public function getUser ($id)
+  {
+    $id = intval($id);
+    $transactions = Transaction::whereUser_id($id)
+      ->whereIs_active(1)
+      ->orderBy('borrowed_at', 'asc')
+      ->get();
+    return response()->json($transactions);
+  }
+
+  public function getDeadline ()
+  {
+    
+  }
+
+  public function getToday ()
+  {
+
   }
 }

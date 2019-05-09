@@ -20,6 +20,17 @@
 
 @section('script')
 <script type="text/javascript">
+  const borrowBook = id => {
+    createNotification({
+      book_id: esc(id),
+      from: esc(store.get('id')),
+      to: esc(0),
+      status: esc('info'),
+      reason: esc('')
+    }, res => {
+      toggleModal('green', 'Borrow Success', 'Successed borrowing book! Wait for the admin response, and check the notification page!')
+    })
+  }
   window.addEventListener('load', async () => {
     let books = null
     await getBooks(res => {
@@ -59,7 +70,11 @@
       <div class="subtitle">${book.stock}</div>
       </div>
       <div class="tile is-child">
-      <span class="button is-success is-fullwidth req-btn" ${store.get('books_on_held') == 2 ? 'disabled=true' : '' }>Request</span>
+      <span class="button is-success is-fullwidth req-btn"
+        ${store.get('books_on_held') == 2 ? 'disabled=true' : '' }
+        onclick="borrowBook(${book.id})">
+        Request
+      </span>
       </div>
       </div>
       </div>
