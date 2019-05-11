@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
         ],
         [
           'name' => 'Jessica Tania',
-          'nis' => '2191651035',
+          'nis' => '2101651035',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'MM',
           'grade' => 11,

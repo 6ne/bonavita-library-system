@@ -5,6 +5,11 @@ html {
   background-repeat: no-repeat;
 }
 
+.hero-body {
+  align-items: flex-start !important;
+  padding: 5rem 1.5rem;
+}
+
 .hero-head.navbar {
   transition: .2s background-color;
 }
