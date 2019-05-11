@@ -9,6 +9,11 @@
 .req-btn {
   display: inline-flex !important;
   width: 70% !important;
+  background-color: #6078ea;
+}
+
+.req-btn:hover {
+  background-color: #1543c1;
 }
 
 .anc-div {
@@ -46,5 +51,15 @@
 }
 
 .heading-book-list {
-  background-color: rgba(10, 10, 10, 0.025) !important;
+  background-color: rgba(96,120,234,0.5) !important;
+}
+
+.heading {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heading .image {
+  width: 360px;
+  height: auto;
 }

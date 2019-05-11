@@ -24,7 +24,7 @@
     <header class="hero-head navbar is-fixed-top is-transparent">
       <div class="navbar-brand">
         <a class="navbar-item" href="{{ url('/') }}">
-          <img class="lib-logo" src="{{ asset('library-logo.png') }}">
+          <img class="lib-logo" src="{{ asset('small-logo-w.png') }}">
         </a>
         <div class="navbar-burger burger">
           <span></span>
@@ -36,37 +36,22 @@
         @if (!Auth::guest())
           <div class="navbar-start">
             <a class="navbar-item" href="{{ url('/') }}">
-              <span class="icon">
-                <i class="fa fa-home"></i>
-              </span>
               <span>Dashboard</span>
             </a>
             <a class="navbar-item" href="{{ url('/notifications') }}">
-              <span class="icon">
-                <i class="fa fa-bell"></i>
-              </span>
               <span>
                 Notification
                 <span id="notificationsNumber"></span>
               </span>
             </a>
             <a class="navbar-item" href="{{ url('/books') }}">
-              <span class="icon">
-                <i class="fa fa-book"></i>
-              </span>
               <span>Books</span>
             </a>
             @if (Auth::user()->is_admin == 1)
               <a class="navbar-item" href="{{ url('/users') }}">
-                <span class="icon">
-                  <i class="fa fa-users"></i>
-                </span>
                 <span>Users</span>
               </a>
               <a class="navbar-item" href="{{ url('/transactions') }}">
-                <span class="icon">
-                  <i class="fa fa-list"></i>
-                </span>
                 <span>Transactions</span>
               </a>
             @endif
@@ -82,18 +67,12 @@
             </a>
           @else
             <a class="navbar-item">
-              <span class="icon">
-                <i class="fa fa-calendar-alt"></i>
-              </span>
               <span>
                 {{\Carbon\Carbon::now('Asia/Jakarta')->format('D, d M Y')}}
               </span>
             </a>
             <div class="navbar-item has-dropdown is-hoverable user-menu">
               <a class="navbar-item">
-                <span class="icon">
-                  <i class="fa fa-user"></i>
-                </span>
                 <span>{{ Auth::user()->name }}</span>
                 <span class="icon">
                   <i class="fa fa-caret-down"></i>

@@ -7,6 +7,11 @@
 
 @section('content')
 <main class="container has-text-centered">
+  <div class="column heading is-paddingless">
+  <figure class="image">
+    <img src="{{ asset('booklist.png') }}">
+  </figure>
+  </div>
   <div class="field">
     <div class="control has-icons-left search-bar">
       <input class="input is-large" type="text" placeholder="Search">
@@ -38,23 +43,23 @@
     })
 
     $('main.container').innerHTML += `
-      <div class="tile is-ancestor anc-div first-anc">
-      <div class="tile is-parent message heading-book-list">
-      <div class="tile is-child">
-      <div class="title is-5">Title</div>
-      </div>
-      <div class="tile is-child">
-      <div class="title is-5">Author</div>
-      </div>
-      <div class="tile is-child">
-      <div class="title is-5">Stock</div>
-      </div>
-      <div class="tile is-child">
-      <div class="title is-5"></div>
-      </div>
-      </div>
-      </div>
-      `
+    <div class="tile is-ancestor anc-div first-anc">
+    <div class="tile is-parent message heading-book-list">
+    <div class="tile is-child">
+    <div class="title is-5">Title</div>
+    </div>
+    <div class="tile is-child">
+    <div class="title is-5">Author</div>
+    </div>
+    <div class="tile is-child">
+    <div class="title is-5">Stock</div>
+    </div>
+    <div class="tile is-child">
+    <div class="title is-5"></div>
+    </div>
+    </div>
+    </div>
+    `
 
     books.forEach(book => {
       $('main.container').innerHTML += `
@@ -70,10 +75,10 @@
       <div class="subtitle">${book.stock}</div>
       </div>
       <div class="tile is-child">
-      <span class="button is-success is-fullwidth req-btn"
-        ${store.get('books_on_held') == 2 ? 'disabled=true' : '' }
-        onclick="borrowBook(${book.id})">
-        Request
+      <span class="button is-fullwidth req-btn has-text-white"
+      ${store.get('books_on_held') == 2 ? 'disabled=true' : '' }
+      onclick="borrowBook(${book.id})">
+      Request
       </span>
       </div>
       </div>

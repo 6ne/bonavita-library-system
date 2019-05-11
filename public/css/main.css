@@ -1,5 +1,8 @@
 html {
   scroll-behavior: smooth;
+  background-image: url('../img/bg-booklist.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero-head.navbar {
@@ -43,4 +46,33 @@ html {
 
 .nav-item-button {
   padding: .35rem;
+}
+
+.navbar-brand {
+  margin: .5em 1em;
+}
+
+.navbar-item {
+  margin: 0 .5em;
+}
+
+.navbar-start .navbar-item {
+  color: white;
+}
+
+.navbar-item {
+    text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.navbar-start .navbar-item span:hover {
+  color: white !important;
+  transition: .35s;
+  transform: scale(1.1);
+  border-bottom: solid;
+}
+
+.navbar-start a {
+  color: white !important;
 }

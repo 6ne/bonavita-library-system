@@ -27,7 +27,7 @@
 .name {
     font-weight: bold;
     font-size: 12pt;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 .box {
@@ -43,6 +43,19 @@
     font-weight: bold;
     font-size: 14pt;
     margin-top: 2.25rem;
+}
+
+.identity div {
+    display: flex;
+    word-wrap: anywhere;
+}
+
+.tag {
+    margin: 0 5px;
+}
+
+.button.is-rounded {
+    border-radius: 0 290486px 290486px 0;
 }
 
 /*.column {

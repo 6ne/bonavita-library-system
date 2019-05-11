@@ -29,7 +29,7 @@
       <div class="major">${child.major == 'Teacher' ? 'TCR' : `${child.major}`}</div>
       <div class="class">${(child.grade) == 0 || child.class == 0 ? '<div class="column"></div>' : `${child.grade}-${child.class}`}</div>
       </div>
-      <div class="column">
+      <div class="column identity">
       <div>${child.nis}</div>
       <div class="name">${child.name}</div>
       <div>Books: <span class="tag" id="onheld-${child.id}">${child.books_on_held}</span></div>
