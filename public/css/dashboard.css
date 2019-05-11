@@ -7,9 +7,19 @@
   color: #ff3860 !important;
 }
 
+.is-active.today-active {
+  border-bottom: solid #3273dc 3px !important;
+  color: #3273dc !important;
+}
+
 .deadline {
     border-bottom-color: #ff3860 !important;
     color: #ff3860 !important;
+}
+
+.today {
+    border-bottom-color: #3273dc !important;
+    color: #3273dc !important;
 }
 
 .tile.is-child {

@@ -52,19 +52,26 @@ const replyNotification = async (id, book_id, from, to, status, reason) => {
 
   if (status == 'approved') {
     /*
-     * @TODO createTransactions
+     * @TODO user from books_on_held + 1
     */
     let user = null
     await getUser(esc(store.get('real_id')), res => {
       user = res.name
     })
 
-    createTransaction({
+    await createTransaction({
       user_id: esc(from),
       book_id: esc(book_id),
-      lend_by: esc(user)
-    }, res => {
-      console.log(res)
+      lend_by: esc(user),
+      returned_at: esc(dateNext(3))
+    })
+
+    await updateBook(esc(book_id), {
+      'stock': -1
+    })
+
+    await updateUser(esc(from), {
+      'books_on_held': 1
     })
   }
 
@@ -179,7 +186,6 @@ window.addEventListener('load', async () => {
     })
 
     if (notifications.length > 0) {
-      $('.fa-bell').classList.add('has-text-danger')
       $('#notificationsNumber').innerHTML = `(${notifications.length})`
     }
   }
@@ -195,7 +201,6 @@ setInterval( async() => {
 
     if (notifications.length > 0) {
       showNotification(`${notifications.length} new notifications`)
-      $('.fa-bell').classList.add('has-text-danger')
       $('#notificationsNumber').innerHTML = `(${notifications.length})`
 
       if (window.location.href.includes('notifications')) {
@@ -214,11 +219,10 @@ setInterval( async() => {
         renderNotifications(notifications, 'insertBefore')
       }
     } else {
-      $('.fa-bell').classList.remove('has-text-danger')
       $('#notificationsNumber').innerHTML = ''
     }
   }
-}, 15000)
+}, 5000)
 
 /* window on scroll */
 window.addEventListener('scroll', () => {

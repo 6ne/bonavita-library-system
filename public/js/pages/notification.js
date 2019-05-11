@@ -3,4 +3,4 @@ window.addEventListener('load', () => {
   showAllNotifications()
 })
 
-setInterval(readAllNotifications, 15001)
+setInterval(readAllNotifications, 5001)

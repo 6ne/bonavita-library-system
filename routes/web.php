@@ -22,11 +22,12 @@ Route::group(['prefix' => '/api'], function () {
       Route::get('/users', 'UserController@index');
 
       Route::group(['prefix' => 'transactions'], function () {
+        Route::get('/deadline', 'TransactionController@getDeadline');
+        Route::get('/today', 'TransactionController@getToday');
         Route::get('/', 'TransactionController@index');
         Route::get('/{id}', 'TransactionController@show');
         Route::get('/user/{id}', 'TransactionController@getUser');
-        Route::get('/deadline', 'TransactionController@getDeadline');
-        Route::get('/today', 'TransactionController@getToday');
+        Route::put('/{id}/update', 'TransactionController@update');
       });
     });
 
@@ -42,11 +43,14 @@ Route::group(['prefix' => '/api'], function () {
     Route::group(['prefix' => 'books'], function () {
       Route::get('/', 'BookController@index');
       Route::get('/{id}', 'BookController@show');
+      Route::put('/{id}/update', 'BookController@update');
+      Route::post('/search', 'BookController@search');
     });
 
     Route::group(['prefix' => 'users'], function () {
       Route::get('/', 'UserController@index');
       Route::get('/{id}', 'UserController@show');
+      Route::put('/{id}/update', 'UserController@update');
     });
 
     Route::group(['prefix' => 'transactions'], function () {

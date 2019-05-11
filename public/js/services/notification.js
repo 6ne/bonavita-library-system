@@ -1,6 +1,6 @@
 const readAllNotifications = async () => {
   await readNotificationFor(esc(store.get('id')), res => {
-    $('.fa-bell').classList.remove('has-text-danger')
+    // $('.fa-bell').classList.remove('has-text-danger')
     $('#notificationsNumber').innerHTML = ''
   })
 }

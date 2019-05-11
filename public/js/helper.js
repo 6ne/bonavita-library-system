@@ -29,7 +29,7 @@ const dateNow = (format='YYYY-MM-DD HH:mm:ss') => dateFormat(moment.now(), forma
 
 const dateNext = (number, unit='days', format='YYYY-MM-DD HH:mm:ss') => dateFormat(moment(dateNow()).add(number, unit))
 
-const dateDiff = (a, b, unit) => Math.abs(moment(a).diff(moment(b), unit))
+const dateDiff = (a, b, unit) => moment(b).diff(moment(a), unit)
 
 const isEmpty = obj => {
   for (let i in obj) if (obj.hasOwnProperty(i)) return false
@@ -69,6 +69,12 @@ const deleteBook = async  (id, callback=null) => {
     if (callback != null) {
       callback(res)
     }
+  })
+}
+
+const searchBooks = async (data, callback) => {
+  await req.post('/api/books/search', data).then(res => {
+    callback(res)
   })
 }
 
@@ -179,5 +185,13 @@ const getTodayTransactions = async callback => {
 const getTransactionsByUser = async (id, callback) => {
   await req.get(`/api/transactions/user/${id}`).then(res => {
     callback(res)
+  })
+}
+
+const updateTransaction = async (id, data, callback) => {
+  await req.put(`/api/transactions/${id}/update`, data).then(res => {
+    if (callback != null) {
+      callback(res)
+    }
   })
 }
