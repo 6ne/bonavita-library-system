@@ -26,10 +26,11 @@ Route::group(['prefix' => '/api'], function () {
         Route::get('/today', 'TransactionController@getToday');
         Route::get('/', 'TransactionController@index');
         Route::get('/{id}', 'TransactionController@show');
-        Route::get('/user/{id}', 'TransactionController@getUser');
         Route::put('/{id}/update', 'TransactionController@update');
       });
     });
+
+    Route::get('/transactions/user/{id}', 'TransactionController@getUser');
 
     Route::group(['prefix' => 'notifications'], function () {
       Route::post('/', 'NotificationController@store');
