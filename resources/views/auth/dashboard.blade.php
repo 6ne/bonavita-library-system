@@ -32,7 +32,7 @@
     <span class="icon">
       <i class="fas fa-bell"></i>
     </span>
-    <span>Remind All</span>
+    <span onclick="remindAll()">Remind All</span>
   </a>
   <div id="users">
     <div class="tile is-ancestor anc-div first-anc heading-list">
@@ -80,6 +80,20 @@
 
   let globalTransaction = []
   let globalState = 'deadline'
+
+  const remindAll = async () => {
+    globalTransaction.forEach(transaction => {
+      createNotification({
+        book_id: esc(transaction.book_id),
+        from: esc(store.get('real_id')),
+        to: esc(transaction.user_id),
+        status: esc('warning'),
+        reason: ''
+      })
+    })
+
+    toggleModal('green', 'Success Reminding', `Success Reminding ${globalState} transaction's users!`)
+  }
 
   const renderDeadlinedTransaction = async () => {
     let transactions = null

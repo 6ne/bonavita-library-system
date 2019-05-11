@@ -103,6 +103,12 @@ const renderNotifications = (res, mode) => {
     let message = ''
 
     switch (item.status) {
+      case 'warning':
+        newItem.classList.add('is-warning')
+        if (item.to != 0) {
+          message = `Don't forget to return your book titled [${book}] because the due date is today`
+        }
+      break
       case 'rejected':
         newItem.classList.add('is-danger')
         if (item.to != 0) {
