@@ -32,9 +32,9 @@
     <span class="icon">
       <i class="fas fa-bell"></i>
     </span>
-    <span>Remind All</span>
+    <span onclick="remindAll()">Remind All</span>
   </a>
-  <div class="users-div" id="users">
+  <div id="users">
     <div class="tile is-ancestor anc-div first-anc heading-list">
       <div class="tile is-parent message">
         <div class="tile is-child">
@@ -80,6 +80,20 @@
 
   let globalTransaction = []
   let globalState = 'deadline'
+
+  const remindAll = async () => {
+    globalTransaction.forEach(transaction => {
+      createNotification({
+        book_id: esc(transaction.book_id),
+        from: esc(store.get('real_id')),
+        to: esc(transaction.user_id),
+        status: esc('warning'),
+        reason: ''
+      })
+    })
+
+    toggleModal('green', 'Success Reminding', `Success Reminding ${globalState} transaction's users!`)
+  }
 
   const renderDeadlinedTransaction = async () => {
     let transactions = null
@@ -197,10 +211,8 @@
             </div>
           </div>
         </div>`
-
       transactions.forEach(transaction => {
         let dayPass = dateDiff(transaction.returned_at, dateNow(), 'days')
-
         $('#users').innerHTML += `
           <div class="tile is-ancestor anc-div first-anc">
             <div class="tile is-parent message book-borrower-list">
@@ -236,64 +248,6 @@
         `
       })
     }
-  }
-
-  const renderUserTransaction = async () => {
-    $('main.container').innerHTML = ''
-
-    let columns = document.createElement('div')
-
-    columns.classList.add('columns')
-    columns.classList.add('is-centered')
-
-    let transactions = null
-    await getTransactionsByUser(store.get('id'), res => {
-      transactions = res
-      console.log(transactions)
-    })
-
-    transactions.forEach(async transaction => {
-      let bookTitle = null
-      let bookAuthor = null
-      await getBook(transaction.book_id, res => {
-        bookTitle = res.title
-        bookAuthor = res.author
-      })
-
-      let borrowedAt = dateFormat(transaction.borrowed_at, 'ddd, D MMM YYYY')
-      let returnedAt = dateFormat(transaction.returned_at, 'ddd, D MMM YYYY')
-
-      let dayPass = dateDiff(transaction.returned_at, dateNow(), 'days')
-      dayPass = dayPass < 0 ? 0 : dayPass
-      columns.innerHTML += `
-      <div class="column is-half">
-        <div class="box">
-          <h1 class="title">${bookTitle}</h1>
-          <h2 class="subtitle">${bookAuthor}</h2>
-          <div class="columns">
-            <div class="column">
-              <h2 class="title is-5">Transaction Date</h2>
-              <h2 class="subtitle">${borrowedAt}</h2>
-            </div>
-            <div class="column">
-              <h2 class="title is-5">Due Date</h2>
-              <h2 class="subtitle">${returnedAt}</h2>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column">
-              <span class="subtitle has-text-danger">Penalty</span>
-              <span class="subtitle has-text-white tag is-medium is-danger">
-                ${num2idr(dayPass * 1000)}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    `
-    })
-
-    $('main.container').appendChild(columns)
   }
 
   const collectBook = async (user_id, book_id, transaction_id, dayPass) => {
@@ -342,11 +296,11 @@
   })
 
 
-  if (store.get('is_admin') !== '0') {
+  if (store.get('id') == 0) {
     window.addEventListener('load', renderDeadlinedTransaction)
   } else {
-    window.addEventListener('load', renderUserTransaction)
-    }
+    $('main.container').innerHTML = ''
+  }
   // window.addEventListener('load', async () => {
     
   // })

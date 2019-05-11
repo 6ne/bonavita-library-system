@@ -55,7 +55,7 @@
 
 .tabs ul li a {
   border-radius: 15px 15px 0 0;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.85);
 }
 
 .is-active {
