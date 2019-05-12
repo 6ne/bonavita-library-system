@@ -76,3 +76,11 @@
   width: 360px;
   height: auto;
 }
+
+.column .title.is-5 {
+  margin-bottom: 2em;
+}
+
+.no-book {
+  margin-top: 6em;
+}

@@ -15,7 +15,7 @@ const showAllNotifications = async () => {
   renderNotifications(notifications, 'append')
   if (notifications.length == 0) {
     $('#notification').innerHTML = `
-      <div class="has-text-centered title">No New Notifications</div>
+      <div class="title has-text-centered no-notification">No New Notification</div>
     `
   }
 }

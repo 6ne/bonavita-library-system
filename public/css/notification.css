@@ -7,3 +7,12 @@
   width: 360px;
   height: auto;
 }
+
+.message.is-info .message-header {
+  background-color: #6078ea;
+  color: #fff;
+}
+
+.no-notification {
+    margin-top: 4em;
+}

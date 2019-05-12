@@ -234,7 +234,7 @@ setInterval( async() => {
 window.addEventListener('scroll', () => {
   if (window.scrollY > 0) {
     $('.fab').style = 'opacity:1'
-    $('.hero-head.navbar').style = 'background-color:whitesmoke'
+    $('.hero-head.navbar').style = 'background-color: rgba(96,120,234,0.5)'
   } else {
     $('.fab').style = 'opacity:0'
     $('.hero-head.navbar').style = ''

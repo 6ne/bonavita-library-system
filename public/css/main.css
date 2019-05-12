@@ -13,6 +13,7 @@ html {
 
 .hero-head.navbar {
   transition: .2s background-color;
+  background-color: rgba(96,120,234,0.2);
 }
 
 .user-menu {

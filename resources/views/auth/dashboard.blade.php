@@ -269,7 +269,7 @@
 
     if (transactions.length == 0) {
       // @TODO Design here kalo gada buku
-      columns.innerHTML = 'no books on held now'
+      columns.innerHTML = '<div class="title no-book">No Books On Held Now!</div>'
     } else {
       transactions.forEach(async transaction => {
         let bookTitle = null
@@ -277,6 +277,9 @@
         let dayPass = dateDiff(transaction.returned_at, dateNow(), 'days')
         dayPass = dayPass < 0 ? 0 : dayPass
         let penalty = num2idr(dayPass * 1000)
+        console.log(transaction)
+        let borrowedAt = dateFormat(transaction.borrowed_at, 'ddd, DD MMM YYYY')
+        let returnedAt = dateFormat(transaction.returned_at, 'ddd, DD MMM YYYY')
 
         await getBook(esc(transaction.book_id), res => {
           bookTitle = res.title
@@ -289,7 +292,29 @@
         // dayPass
         // dateFormat(transaction.borrowed_at, 'ddd, DD MMM YYYY')
         // dateFormat(transaction.returned_at, 'ddd, DD MMM YYYY')
-        // columns.innerHTML += 
+        columns.innerHTML += `
+          <div class="column is-half">
+            <div class="box">
+              <h1 class="title">${bookTitle}</h1>
+              <h2 class="subtitle">${bookAuthor}</h2>
+              <div class="columns">
+                <div class="column">
+                  <h2 class="title is-5">Transaction Date</h2>
+                  <h2 class="subtitle">${borrowedAt}</h2>
+                </div>
+                <div class="column">
+                  <h2 class="title is-5">Due Date</h2>
+                  <h2 class="subtitle">${returnedAt}</h2>
+                </div>
+              </div>
+            <div class="columns">
+              <div class="column">
+                <span class="subtitle has-text-danger">Penalty</span>
+                <span class="subtitle tag is-danger is-medium">${penalty}</span>
+              </div>
+            </div>
+          </div>
+        `
       })
     }
 
