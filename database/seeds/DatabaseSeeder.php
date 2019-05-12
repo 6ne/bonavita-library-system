@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
       DB::table('users')->insert([
         [
           'name' => 'Admin1',
-          'nis' => 'admin1',
+          'nis' => 'admin',
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'Admin',
           'is_admin' => true
@@ -28,14 +28,7 @@ class DatabaseSeeder extends Seeder
           'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
           'major' => 'Admin',
           'is_admin' => true
-        ],
-        [
-          'name' => 'Guru',
-          'nis' => 'guru',
-          'password' => '$2y$10$Opy8MEEvi7d3LV2.q0p5cuRwiOjPy10zqI3mmBZ6ghscNM3/jZY2q',
-          'major' => 'Teacher',
-          'is_admin' => false
-        ],
+        ]
       ]);
 
       DB::table('users')->insert([
@@ -97,6 +90,21 @@ class DatabaseSeeder extends Seeder
           'title' => 'Harry Potter and the Philosopher\'s Stone',
           'author' => 'J. K. Rowling',
           'stock' => 10
+        ],
+        [
+          'title' => 'Don Quixote',
+          'author' => 'Miguel de Cervantes',
+          'stock' => 10,
+        ],
+        [
+          'title' => 'The Hobbit',
+          'author' => 'J. R. R. Tolkien',
+          'stock' => 10,
+        ],
+        [
+          'title' => 'And Then There Were None',
+          'author' => 'Agatha Christie',
+          'stock' => 10,
         ],
       ]);
 

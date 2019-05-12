@@ -61,7 +61,7 @@
         borrowerName = res.name
         borrowerNis = res.nis
       })
-
+      
       let penalty = num2idr(transaction.penalty)
 
       let borrowedAt = dateFormat(transaction.borrowed_at, 'ddd, DD MMM YYYY')

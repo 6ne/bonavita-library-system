@@ -1,6 +1,7 @@
 .login-container {
   max-width: 700px !important;
   width: 700px !important;
+  z-index: 40;
 }
 
 .login-img {

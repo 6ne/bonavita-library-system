@@ -218,6 +218,7 @@
         </div>`
       transactions.forEach(transaction => {
         let dayPass = dateDiff(transaction.returned_at, dateNow(), 'days')
+        dayPass = dayPass < 0 ? 0 : dayPass
         $('#users').innerHTML += `
           <div class="tile is-ancestor anc-div first-anc">
             <div class="tile is-parent message book-borrower-list">
@@ -268,7 +269,6 @@
     })
 
     if (transactions.length == 0) {
-      // @TODO Design here kalo gada buku
       columns.innerHTML = '<div class="title no-book">No Books On Held Now!</div>'
     } else {
       transactions.forEach(async transaction => {
@@ -285,13 +285,7 @@
           bookTitle = res.title
           bookAuthor = res.author
         })
-
-        // @TODO Design here kalo ada buku
-        // bookTitle
-        // bookAuthor
-        // dayPass
-        // dateFormat(transaction.borrowed_at, 'ddd, DD MMM YYYY')
-        // dateFormat(transaction.returned_at, 'ddd, DD MMM YYYY')
+        
         columns.innerHTML += `
           <div class="column is-half">
             <div class="box">
@@ -368,7 +362,6 @@
 
 
   if (store.get('is_admin') === '1') {
-    alert(1)
     window.addEventListener('load', renderDeadlinedTransaction)
   } else {
     window.addEventListener('load', renderUserTransaction)
