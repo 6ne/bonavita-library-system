@@ -255,6 +255,47 @@
     }
   }
 
+  const renderUserTransaction = async () => {
+    $('main.container').innerHTML = ''
+    let transactions = null
+
+    let columns = document.createElement('div')
+    columns.classList.add('columns')
+    columns.classList.add('is-centered')
+
+    await getTransactionsByUser(esc(store.get('id')), res => {
+      transactions = res
+    })
+
+    if (transactions.length == 0) {
+      // @TODO Design here kalo gada buku
+      columns.innerHTML = 'no books on held now'
+    } else {
+      transactions.forEach(async transaction => {
+        let bookTitle = null
+        let bookAuthor = null
+        let dayPass = dateDiff(transaction.returned_at, dateNow(), 'days')
+        dayPass = dayPass < 0 ? 0 : dayPass
+        let penalty = num2idr(dayPass * 1000)
+
+        await getBook(esc(transaction.book_id), res => {
+          bookTitle = res.title
+          bookAuthor = res.author
+        })
+
+        // @TODO Design here kalo ada buku
+        // bookTitle
+        // bookAuthor
+        // dayPass
+        // dateFormat(transaction.borrowed_at, 'ddd, DD MMM YYYY')
+        // dateFormat(transaction.returned_at, 'ddd, DD MMM YYYY')
+        // columns.innerHTML += 
+      })
+    }
+
+    $('main.container').appendChild(columns)
+  }
+
   const collectBook = async (user_id, book_id, transaction_id, dayPass) => {
     await updateBook(esc(book_id), {
       'stock': 1
@@ -301,13 +342,11 @@
   })
 
 
-  if (store.get('id') == 0) {
+  if (store.get('is_admin') === '1') {
+    alert(1)
     window.addEventListener('load', renderDeadlinedTransaction)
   } else {
-    $('main.container').innerHTML = ''
+    window.addEventListener('load', renderUserTransaction)
   }
-  // window.addEventListener('load', async () => {
-    
-  // })
 </script>
 @endsection
