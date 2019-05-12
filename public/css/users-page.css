@@ -7,7 +7,7 @@
 }
 
 .detail-button {
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 .column.left-side-card {
@@ -24,7 +24,7 @@
     border-radius: 50% !important;
 }
 
-.name {
+.name, .class {
     font-weight: bold;
     font-size: 12pt;
     margin: 5px 0;
@@ -39,12 +39,6 @@
     font-size: 42pt;
 }
 
-.class {
-    font-weight: bold;
-    font-size: 14pt;
-    margin-top: 2.25rem;
-}
-
 .identity div {
     display: flex;
     word-wrap: anywhere;
@@ -56,6 +50,16 @@
 
 .button.is-rounded {
     border-radius: 0 290486px 290486px 0;
+}
+
+.detail-button {
+  background-color: #6078ea !important;
+  color: white !important;
+  margin-top: .5em;
+}
+
+.detail-button:hover {
+  background-color: #1543c1 !important;
 }
 
 .heading {

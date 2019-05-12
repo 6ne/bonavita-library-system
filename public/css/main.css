@@ -59,17 +59,14 @@ html {
 }
 
 .navbar-item {
-  margin: 0 .5em;
+  margin: 0 .25em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.05em;
 }
 
 .navbar-start .navbar-item {
   color: white;
-}
-
-.navbar-item {
-    text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.05em;
 }
 
 .navbar-start .navbar-item span:hover {
@@ -81,4 +78,8 @@ html {
 
 .navbar-start a {
   color: white !important;
+}
+
+.register-btn {
+  margin-right: 1.25em;
 }

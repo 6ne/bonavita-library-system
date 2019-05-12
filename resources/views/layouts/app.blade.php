@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" href="{{ asset('small-logo.png') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome/all.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
@@ -63,7 +63,7 @@
               <span class="button is-link is-outlined is-rounded nav-button">Login</span>
             </a>
             <a class="navbar-item nav-item-button" href="{{ url('/register') }}">
-              <span class="button is-primary is-rounded nav-button">Register</span>
+              <span class="button is-primary is-rounded nav-button register-btn">Register</span>
             </a>
           @else
             <a class="navbar-item">

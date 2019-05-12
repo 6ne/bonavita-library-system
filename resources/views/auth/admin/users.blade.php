@@ -29,21 +29,24 @@
     users.forEach(child => {
       $('.first-columns').innerHTML += `
       <div class="column is-one-third">
-      <div class="columns message user-card box">
-      <div class="column left-side-card" id="major-${child.id}">
-      <div class="major">${child.major == 'Teacher' ? 'TCR' : `${child.major}`}</div>
-      <div class="class">${(child.grade) == 0 || child.class == 0 ? '<div class="column"></div>' : `${child.grade}-${child.class}`}</div>
-      </div>
-      <div class="column identity">
-      <div>${child.nis}</div>
-      <div class="name">${child.name}</div>
-      <div>Books: <span class="tag" id="onheld-${child.id}">${child.books_on_held}</span></div>
-      <div class="detail-button button is-primary is-fullwidth is-rounded">
-      <span class="icon is-small"><i class="fas fa-list-ul"></i></span>
-      <span>Details</span>
-      </div>
-      </div>
-      </div>
+        <div class="columns message user-card box">
+          <div class="column is-half left-side-card" id="major-${child.id}">
+            <div class="major">${child.major == 'Teacher' ? 'TCR' : `${child.major}`}
+            </div>
+            <div class="column"></div>
+            <div class="column"></div>
+          </div>
+          <div class="column is-half identity">
+            <div>${child.nis}</div>
+            <div class="name">${child.name}</div>
+            <div class="class">${(child.grade) == 0 ? '' : `${child.grade}`} ${child.major} ${(child.class) == 0 ? '' : `${child.class}`}</div>
+            <div>Books: <span class="tag" id="onheld-${child.id}">${child.books_on_held}</span></div>
+            <div class="detail-button button is-primary is-fullwidth is-rounded">
+              <span class="icon is-small"><i class="fas fa-list-ul"></i></span>
+              <span>Details</span>
+            </div>
+          </div>
+        </div>
       </div>
       `
 
