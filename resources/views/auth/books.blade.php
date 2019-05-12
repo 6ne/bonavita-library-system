@@ -8,9 +8,9 @@
 @section('content')
 <main class="container has-text-centered">
   <div class="column heading is-paddingless">
-  <figure class="image">
-    <img src="{{ asset('booklist.png') }}">
-  </figure>
+    <figure class="image">
+      <img src="{{ asset('heading/booklist.png') }}">
+    </figure>
   </div>
   <div class="field">
     <div class="control has-icons-left search-bar">
@@ -112,7 +112,7 @@
       <div class="subtitle">${book.stock}</div>
       </div>
       <div class="tile is-child">
-      <span class="button is-success is-fullwidth req-btn"
+      <span class="button is-fullwidth req-btn"
         ${store.get('books_on_held') == 2 || store.get('id') == 0 || book.stock == 0 ? 'disabled=true' : '' }
         onclick="borrowBook(${book.id})
         ">

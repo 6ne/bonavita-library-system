@@ -79,12 +79,6 @@
                 </span>
               </a>
               <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  <span class="icon">
-                    <i class="fa fa-cog"></i>
-                  </span>
-                  <span class="navbar-link is-arrowless">Settings</span>
-                </a>
                 <a class="navbar-item" href="{{ url('/api/logout') }}">
                   <span class="icon">
                     <i class="fa fa-sign-out-alt"></i>

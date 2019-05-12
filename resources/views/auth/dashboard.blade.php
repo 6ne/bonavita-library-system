@@ -12,6 +12,11 @@
 
 @section('content')
 <main class="container has-text-centered">
+  <div class="column heading is-paddingless">
+    <figure class="image">
+      <img src="{{ asset('heading/dashboard.png') }}">
+    </figure>
+  </div>
   <div class="tabs is-centered is-fullwidth">
     <ul>
       <li class="is-active deadline-active" id="deadline">

@@ -11,10 +11,10 @@ const showAllNotifications = async () => {
     notifications = res
   })
 
-  $('main.container').innerHTML = ''
+  $('#notification').innerHTML = ''
   renderNotifications(notifications, 'append')
   if (notifications.length == 0) {
-    $('main.container').innerHTML = `
+    $('#notification').innerHTML = `
       <div class="has-text-centered title">No New Notifications</div>
     `
   }

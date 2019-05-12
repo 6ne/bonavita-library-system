@@ -7,6 +7,11 @@
 
 @section('content')
 <main class="container has-text-centered">
+  <div class="column heading is-paddingless">
+    <figure class="image">
+      <img src="{{ asset('heading/users.png') }}">
+    </figure>
+  </div>
   <div class="columns is-multiline first-columns">
     
   </div>

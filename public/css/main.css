@@ -3,6 +3,7 @@ html {
   background-image: url('../img/bg-booklist.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .hero-body {

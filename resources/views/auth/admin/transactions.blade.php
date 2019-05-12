@@ -2,62 +2,16 @@
 @section('title', 'Transactions')
 
 @section('style')
-<style type="text/css">
-  .column {
-  align-self: center;
-}
-
-.buttons {
-  justify-content: center;
-}
-
-.req-btn {
-  display: inline-flex !important;
-  width: 70% !important;
-}
-
-.anc-div {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.search-bar {
-  margin-top: 2%;
-}
-
-.first-anc {
-  margin-top: 2.5% !important;
-}
-
-.hero-body {
-  align-items: normal;
-}
-
-.tile.is-child {
-  word-wrap: anywhere;
-  align-self: center;
-}
-
-.tile.is-parent {
-  padding: .5rem;
-  background-color: transparent;
-  margin: 5px 0;
-}
-
-.book-list:hover {
-  box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
-  transition: .25s;
-  transform: scale(1.01);
-}
-
-.heading-book-list {
-  background-color: rgba(10, 10, 10, 0.025) !important;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/transaction.css') }}">
 @endsection
 
 @section('content')
 <main class="container has-text-centered">
+  <div class="column heading is-paddingless">
+    <figure class="image">
+      <img src="{{ asset('heading/transactions.png') }}">
+    </figure>
+  </div>
 </main>
 @endsection
 
@@ -119,7 +73,7 @@
       $('.modal-content').innerHTML = `
         <div class="modal-card">
           <header class="modal-card-head">
-            <p class="modal-card-title">Detail Transaction</p>
+            <p class="modal-card-title has-text-centered has-text-white">Detail Transaction</p>
           </header>
           <section class="modal-card-body">
             <div style="display: flex">
@@ -183,7 +137,7 @@
 
       $('main.container').innerHTML += `
         <div class="tile is-ancestor anc-div first-anc">
-        <div class="tile is-parent message heading-book-list">
+        <div class="tile is-parent message heading-transaction">
         <div class="tile is-child">
         <div class="title is-5">Borrower</div>
         </div>
@@ -218,7 +172,7 @@
 
         $('main.container').innerHTML += `
         <div class="tile is-ancestor anc-div">
-        <div class="tile is-parent message book-list">
+        <div class="tile is-parent message transaction-list">
         <div class="tile is-child">
         <div class="subtitle">${borrowerName}</div>
         </div>
@@ -226,13 +180,13 @@
         <div class="subtitle">${book}</div>
         </div>
         <div class="tile is-child">
-        <div class="subtitle">${transaction.is_active === 1 ? 'Active' : 'Inactive'}</div>
+        <div class="subtitle tag ${transaction.is_active === 1 ? 'is-success' : 'is-danger'} is-medium">${transaction.is_active === 1 ? 'Active' : 'Inactive'}</div>
         </div>
         <div class="tile is-child">
         <div class="subtitle">${borrowedAt}</div>
         </div>
         <div class="tile is-child">
-        <span class="button is-success is-fullwidth req-btn"
+        <span class="button is-fullwidth detail-btn"
           onclick="showDetail(${transaction.id})">
           Detail
         </span>

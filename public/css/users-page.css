@@ -58,6 +58,12 @@
     border-radius: 0 290486px 290486px 0;
 }
 
-/*.column {
-    padding: .5rem !important;
-}*/
+.heading {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heading .image {
+  width: 360px;
+  height: auto;
+}

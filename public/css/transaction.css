@@ -6,15 +6,15 @@
   justify-content: center;
 }
 
-.button.is-fullwidth.req-btn {
+.detail-btn {
   display: inline-flex !important;
   width: 70% !important;
-  background-color: #6078ea;
+  background-color: #6078ea !important;
   color: white !important;
 }
 
-.button.is-fullwidth.req-btn:hover {
-  background-color: #1543c1;
+.detail-btn:hover {
+  background-color: #1543c1 !important;
 }
 
 .anc-div {
@@ -45,14 +45,14 @@
   margin: 5px 0;
 }
 
-.book-list:hover {
+.transaction-list:hover {
   box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
   transition: .25s;
   transform: scale(1.01);
   background-color: rgba(255,255,255,.75);
 }
 
-.heading-book-list {
+.heading-transaction {
   background-color: rgba(96,120,234,0.5) !important;
 }
 
@@ -64,4 +64,10 @@
 .heading .image {
   width: 360px;
   height: auto;
+}
+
+.modal-card-head {
+  background-color: #6078ea;
+  text-transform: uppercase;
+  font-weight: bold;
 }
